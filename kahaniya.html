@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanhaiya Singh Rawat</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        #name {
+            display: none;
+        }
+        .white-bg {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button id="backgroundSwitch">Toggle Background</button>
+    <div id="name">
+        <span id="k">K</span>anhaiya <span id="s">S</span>ingh <span id="r">R</span>awat
+    </div>
+
+    <script>
+        const nameElement = document.getElementById('name');
+        const backgroundSwitchButton = document.getElementById('backgroundSwitch');
+        const kElement = document.getElementById('k');
+        const sElement = document.getElementById('s');
+        const rElement = document.getElementById('r');
+
+        let isBlackBackground = true;
+
+        backgroundSwitchButton.addEventListener('click', () => {
+            isBlackBackground = !isBlackBackground;
+            document.body.classList.toggle('white-bg', !isBlackBackground);
+            kElement.style.color = isBlackBackground ? 'red' : 'blue';
+            sElement.style.color = isBlackBackground ? 'green' : 'yellow';
+            rElement.style.color = isBlackBackground ? 'orange' : 'purple';
+        });
+
+        // Initially, display the name after a slight delay for the animation effect
+        setTimeout(() => {
+            nameElement.style.display = 'block';
+        }, 1000);
+    </script>
+</body>
+</html>
